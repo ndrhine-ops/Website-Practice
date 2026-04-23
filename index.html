@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Noto+Serif:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -106,9 +104,92 @@
         body {
             background-color: #fcf9f3;
         }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Portfolio image hover */
+        .portfolio-img {
+            overflow: hidden;
+        }
+        .portfolio-img img {
+            transition: transform 0.7s ease, filter 0.7s ease;
+            filter: grayscale(20%);
+        }
+        .portfolio-img:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        /* Button hover */
+        .btn-primary {
+            transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.15s ease;
+        }
+        .btn-primary:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+        }
+        .btn-outline {
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+        }
+        .btn-outline:hover {
+            background-color: #f5f0ea;
+            transform: translateY(-1px);
+        }
+
+        /* Form styles */
+        .form-field {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #43302E;
+            padding: 10px 0;
+            font-family: 'Noto Serif', serif;
+            font-size: 15px;
+            color: #1c1c18;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .form-field:focus {
+            border-bottom-color: #2A3D2E;
+        }
+        .form-field::placeholder {
+            color: #9e8e8d;
+            font-style: italic;
+        }
+        select.form-field {
+            appearance: none;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2343302E' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 4px center;
+            padding-right: 24px;
+        }
+        .form-success {
+            display: none;
+            background: #e8f4ec;
+            border: 1px solid #4f6352;
+            color: #2A3D2E;
+            padding: 14px 20px;
+            font-family: 'Noto Serif', serif;
+            font-size: 15px;
+            border-radius: 2px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md">
+
 <!-- TopNavBar -->
 <header class="fixed top-0 w-full z-50 border-b border-[#43302E]/10 bg-stone-50/95 dark:bg-stone-950/95 backdrop-blur-sm">
 <nav class="flex justify-between items-center w-full px-8 md:px-16 py-6 max-w-screen-2xl mx-auto">
@@ -116,20 +197,22 @@
                 Rhinehart Company
             </div>
 <div class="hidden md:flex space-x-10 items-center">
-<a class="font-serif tracking-tight text-[#43302E] dark:text-white border-b border-[#43302E] dark:border-white pb-1" href="#">Portfolio</a>
-<a class="font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors" href="#">About</a>
-<a class="font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors" href="#">Process</a>
-<a class="font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors" href="#">Materials</a>
-<a class="font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors" href="#">Contact</a>
+<a class="font-serif tracking-tight text-[#43302E] dark:text-white border-b border-[#43302E] dark:border-white pb-1 transition-colors" href="#portfolio">Portfolio</a>
+<a class="font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors" href="#about">About</a>
+<a class="font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors" href="#process">Process</a>
+<a class="font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors" href="#materials">Materials</a>
+<a class="font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors" href="#contact">Contact</a>
 </div>
-<button class="bg-[#43302E] text-white px-6 py-2 rounded-DEFAULT font-label-caps text-label-caps hover:opacity-80 transition-opacity">
+<a href="#contact" class="btn-primary bg-[#43302E] text-white px-6 py-2 rounded-DEFAULT font-label-caps text-label-caps">
                 Consultation
-            </button>
+            </a>
 </nav>
 </header>
+
 <main class="pt-32">
+
 <!-- Hero Section -->
-<section class="px-8 md:px-16 mb-stack-lg max-w-screen-2xl mx-auto">
+<section class="px-8 md:px-16 mb-stack-lg max-w-screen-2xl mx-auto reveal">
 <div class="max-w-3xl">
 <h1 class="font-headline-display text-headline-display text-primary mb-stack-sm">The Art of Permanent Architecture</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
@@ -137,8 +220,9 @@
                 </p>
 </div>
 </section>
-<!-- Category Filter -->
-<section class="px-8 md:px-16 mb-stack-md max-w-screen-2xl mx-auto overflow-x-auto">
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="px-8 md:px-16 mb-stack-md max-w-screen-2xl mx-auto overflow-x-auto reveal">
 <div class="flex space-x-8 border-b border-outline-variant pb-4 min-w-max">
 <button class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-4">All Works</button>
 <button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-4">Kitchens</button>
@@ -147,13 +231,15 @@
 <button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-4">Custom Furniture</button>
 </div>
 </section>
-<!-- Project Grid: Bento/Editorial Layout -->
+
+<!-- Project Grid -->
 <section class="px-8 md:px-16 mb-stack-lg max-w-screen-2xl mx-auto">
 <div class="grid grid-cols-12 gap-gutter">
+
 <!-- Featured Project: Kitchen -->
-<div class="col-span-12 md:col-span-8 group cursor-pointer mb-stack-md">
-<div class="overflow-hidden mb-stack-sm bg-surface-container">
-<img class="w-full aspect-[16/9] object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Luxurious minimalist kitchen with floor-to-ceiling dark walnut cabinetry, white marble island, and soft afternoon light streaming through a window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhdxScweXFxmvIrK-YDMpWBrdM-C5Ga2gk788oSe7BCC3_rirn4t5HlbQQD3ESiaDv5YqACZY7mjE7fQBleEVXdiWINImBuzgSD3rGc-T96902SHrVv5WShsHimkrSyfC_1Keaheep5jB0CZh4MTjexb_q7cOdqm8quOdI-bS4-00H1Fl8IdUq_qCxEah2ORzS6GwVTI7W5bYkaxZ7RjaqfHwU_VnQgJTyRmmYGfu5x5149dehkfu4KxxIRUPWAGYTWpPuAE_hCRo"/>
+<div class="col-span-12 md:col-span-8 group cursor-pointer mb-stack-md reveal">
+<div class="portfolio-img mb-stack-sm bg-surface-container">
+<img class="w-full aspect-[16/9] object-cover" alt="Luxurious minimalist kitchen with floor-to-ceiling dark walnut cabinetry" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhdxScweXFxmvIrK-YDMpWBrdM-C5Ga2gk788oSe7BCC3_rirn4t5HlbQQD3ESiaDv5YqACZY7mjE7fQBleEVXdiWINImBuzgSD3rGc-T96902SHrVv5WShsHimkrSyfC_1Keaheep5jB0CZh4MTjexb_q7cOdqm8quOdI-bS4-00H1Fl8IdUq_qCxEah2ORzS6GwVTI7W5bYkaxZ7RjaqfHwU_VnQgJTyRmmYGfu5x5149dehkfu4KxxIRUPWAGYTWpPuAE_hCRo"/>
 </div>
 <div class="flex justify-between items-start">
 <div>
@@ -161,31 +247,34 @@
 <h3 class="font-headline-md text-headline-md text-primary">The Blackwood Residence</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xl">Book-matched American Walnut panels with integrated brass pulls and honed Calacatta marble surfaces.</p>
 </div>
-<span class="material-symbols-outlined text-primary mt-4" data-icon="north_east">north_east</span>
+<span class="material-symbols-outlined text-primary mt-4">north_east</span>
 </div>
 </div>
+
 <!-- Secondary Project: Library -->
-<div class="col-span-12 md:col-span-4 group cursor-pointer mb-stack-md">
-<div class="overflow-hidden mb-stack-sm bg-surface-container">
-<img class="w-full aspect-[3/4] object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Stately private library featuring hand-carved oak bookshelves from floor to ceiling, integrated ladder, and a warm moody atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdAbPlK9oGp9WY41Wp9l2v8bd1-yDspn1osn2qwjPjaWkf3lhlVXH-4ChoSj-fKhl_dZSACoVirSFrw0iA4Z6oqynVvnRnEZRV-56k4YMDBR-7FBtlS_gd5vpVZoUWDaVUyMDLefyrk_L1q-Ndjvo60Xe_rQ1TSYfUuy8qjVPXfK2UWd4g7WCcnrPpF6jWSsNHLDoYdfWMO-WicVb9sWnzwmkKKOKWikxAj6wl8v-oweaw47lYEsslVvsu2wf7F5XLl_idDIndB0Y"/>
+<div class="col-span-12 md:col-span-4 group cursor-pointer mb-stack-md reveal">
+<div class="portfolio-img mb-stack-sm bg-surface-container">
+<img class="w-full aspect-[3/4] object-cover" alt="Stately private library featuring hand-carved oak bookshelves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdAbPlK9oGp9WY41Wp9l2v8bd1-yDspn1osn2qwjPjaWkf3lhlVXH-4ChoSj-fKhl_dZSACoVirSFrw0iA4Z6oqynVvnRnEZRV-56k4YMDBR-7FBtlS_gd5vpVZoUWDaVUyMDLefyrk_L1q-Ndjvo60Xe_rQ1TSYfUuy8qjVPXfK2UWd4g7WCcnrPpF6jWSsNHLDoYdfWMO-WicVb9sWnzwmkKKOKWikxAj6wl8v-oweaw47lYEsslVvsu2wf7F5XLl_idDIndB0Y"/>
 </div>
 <span class="font-label-caps text-label-caps text-secondary uppercase block mb-1">Libraries</span>
 <h3 class="font-headline-md text-headline-md text-primary">Highland Study</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mt-2">Custom-milled White Oak shelving featuring traditional dovetail joinery and integrated LED lighting.</p>
 </div>
+
 <!-- Third Project: Bathroom -->
-<div class="col-span-12 md:col-span-4 group cursor-pointer mb-stack-md">
-<div class="overflow-hidden mb-stack-sm bg-surface-container">
-<img class="w-full aspect-[1/1] object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Minimalist modern bathroom vanity in light maple wood with stone sink and clean vertical lines in a bright airy space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzm6CwtNQxHnHAFc-NI4SwM0PJ1bTU87LiWcVLtlAfXt7WD4ucul7ExruW7izul9nskYjBhqfMDbN07ezt1FPs_O2p2W4RPZsvGhTZxXnkNetMkX69hUS6WyN_qYDt1grvR_tX8GFqFvDF1ZIBmOtPHau1g6QX4u21eOmFHhu72Ody6Xv3QRzEYIko2er0liMlSQEf72FUUOsxoV6QU14A-zpeqpvFuSQT3Qn3weA-sYzJyFCf_en0mzgW4a5c1MDP-sve6ZJC3yI"/>
+<div class="col-span-12 md:col-span-4 group cursor-pointer mb-stack-md reveal">
+<div class="portfolio-img mb-stack-sm bg-surface-container">
+<img class="w-full aspect-[1/1] object-cover" alt="Minimalist modern bathroom vanity in light maple wood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzm6CwtNQxHnHAFc-NI4SwM0PJ1bTU87LiWcVLtlAfXt7WD4ucul7ExruW7izul9nskYjBhqfMDbN07ezt1FPs_O2p2W4RPZsvGhTZxXnkNetMkX69hUS6WyN_qYDt1grvR_tX8GFqFvDF1ZIBmOtPHau1g6QX4u21eOmFHhu72Ody6Xv3QRzEYIko2er0liMlSQEf72FUUOsxoV6QU14A-zpeqpvFuSQT3Qn3weA-sYzJyFCf_en0mzgW4a5c1MDP-sve6ZJC3yI"/>
 </div>
 <span class="font-label-caps text-label-caps text-secondary uppercase block mb-1">Bathrooms</span>
 <h3 class="font-headline-md text-headline-md text-primary">Mercer Suite</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mt-2">Rift-sawn Maple vanity with hand-turned legs and water-resistant matte finish.</p>
 </div>
+
 <!-- Fourth Project: Furniture -->
-<div class="col-span-12 md:col-span-8 group cursor-pointer mb-stack-md">
-<div class="overflow-hidden mb-stack-sm bg-surface-container">
-<img class="w-full aspect-[21/9] object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Artisanal dining table detail showing intricate wood grain and masterfully crafted corner joint on a dark wooden surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaixEEQz5eSvXB7GHed5iZ-jJguch_cufuvfOu4nrrxtgjX3N-NriWAv_GHwTdexzlkmAwm1ssW0STkz7xNuGLjMh23J3j6nP7amjlpCwmaJkSbIS5lxd2fbQl3s7FD0U7x2B_fSnlfNNqmOvx3UsOtKDSKGuge8JzwxsGl5-ihKq1qLy9xDfQF6-fazTMLiSU5vtND0_R2DcUqWzk739fFDe4Gb-aXU6y9_kPmuXTEWyfRtOIOSgB2goeU_KGO09W6A0K8Nsp4WY"/>
+<div class="col-span-12 md:col-span-8 group cursor-pointer mb-stack-md reveal">
+<div class="portfolio-img mb-stack-sm bg-surface-container">
+<img class="w-full aspect-[21/9] object-cover" alt="Artisanal dining table detail showing intricate wood grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaixEEQz5eSvXb7GHed5iZ-jJguch_cufuvfOu4nrrxtgjX3N-NriWAv_GHwTdexzlkmAwm1ssW0STkz7xNuGLjMh23J3j6nP7amjlpCwmaJkSbIS5lxd2fbQl3s7FD0U7x2B_fSnlfNNqmOvx3UsOtKDSKGuge8JzwxsGl5-ihKq1qLy9xDfQF6-fazTMLiSU5vtND0_R2DcUqWzk739fFDe4Gb-aXU6y9_kPmuXTEWyfRtOIOSgB2goeU_KGO09W6A0K8Nsp4WY"/>
 </div>
 <div class="flex justify-between items-start">
 <div>
@@ -193,14 +282,16 @@
 <h3 class="font-headline-md text-headline-md text-primary">The Heritage Table</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xl">A solid 12-foot Cherry wood dining table constructed using traditional mortise and tenon joinery.</p>
 </div>
-<span class="material-symbols-outlined text-primary mt-4" data-icon="north_east">north_east</span>
+<span class="material-symbols-outlined text-primary mt-4">north_east</span>
 </div>
 </div>
+
 </div>
 </section>
-<!-- Technical Excellence Section -->
-<section class="bg-surface-container-low py-24 mb-stack-lg">
-<div class="px-8 md:px-16 max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+
+<!-- About / Technical Excellence Section -->
+<section id="about" class="bg-surface-container-low py-24 mb-stack-lg">
+<div class="px-8 md:px-16 max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center reveal">
 <div>
 <h2 class="font-headline-lg text-headline-lg text-primary mb-stack-sm">Material Mastery</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">
@@ -208,14 +299,14 @@
                     </p>
 <div class="space-y-6">
 <div class="flex items-start space-x-4">
-<span class="material-symbols-outlined text-secondary" data-icon="architecture">architecture</span>
+<span class="material-symbols-outlined text-secondary">architecture</span>
 <div>
 <h4 class="font-label-caps text-label-caps text-primary">Precision Joinery</h4>
 <p class="font-body-md text-body-md text-on-surface-variant">Hand-cut dovetails and blind tenons ensure structural longevity for a lifetime of use.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
-<span class="material-symbols-outlined text-secondary" data-icon="palette">palette</span>
+<span class="material-symbols-outlined text-secondary">palette</span>
 <div>
 <h4 class="font-label-caps text-label-caps text-primary">Natural Finishes</h4>
 <p class="font-body-md text-body-md text-on-surface-variant">Low-VOC oils and waxes that protect the wood while allowing it to breathe and age gracefully.</p>
@@ -224,15 +315,44 @@
 </div>
 </div>
 <div class="relative">
-<img class="w-full aspect-square object-cover rounded-DEFAULT shadow-sm" data-alt="Close up of a carpenter's hands using a traditional hand plane on a long piece of light oak wood in a sun-drenched workshop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAynmXEJo4GD71_j8AkITQjPgFJWuKwUmr0dngs-K-0PJgXj6wZiznZmNhze-YzNZ5P-Lol5dcSzHS-sDMlMOM1gK1zbGGN8tKcwEeCDIJX3U12Sy3tMv1ON4XRwiuK4bcpPBh6RJXkSxvKZZjxOi_Fhd5Ny-A_4nKJ0dppGJCeTGMQ1H1uQAlMCswRfh1BrrTe4kmUFBGAbIO3U4M0y6fol6tLn59j_sg7o7HMSmwZerlQjGoAX8FEJwH8aI2TUWvXk5N5nRX3Sbc"/>
+<img class="w-full aspect-square object-cover rounded-DEFAULT shadow-sm" alt="Carpenter's hands using a traditional hand plane on a piece of oak" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAynmXEJo4GD71_j8AkITQjPgFJWuKwUmr0dngs-K-0PJgXj6wZiznZmNhze-YzNZ5P-Lol5dcSzHS-sDMlMOM1gK1zbGGN8tKcwEeCDIJX3U12Sy3tMv1ON4XRwiuK4bcpPBh6RJXkSxvKZZjxOi_Fhd5Ny-A_4nKJ0dppGJCeTGMQ1H1uQAlMCswRfh1BrrTe4kmUFBGAbIO3U4M0y6fol6tLn59j_sg7o7HMSmwZerlQjGoAX8FEJwH8aI2TUWvXk5N5nRX3Sbc"/>
 <div class="absolute -bottom-8 -left-8 bg-primary p-8 hidden lg:block">
 <p class="text-white font-serif italic text-xl">"True craftsmanship is the silence where the hand meets the heart."</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Material Swatches Interaction -->
-<section class="px-8 md:px-16 mb-stack-lg max-w-screen-2xl mx-auto text-center">
+
+<!-- Process Section -->
+<section id="process" class="px-8 md:px-16 py-24 max-w-screen-2xl mx-auto reveal">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4 text-center">Our Process</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant text-center mb-16 max-w-2xl mx-auto">Every commission follows a proven four-stage path from concept to completion.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="reveal">
+<div class="text-5xl font-serif text-outline-variant mb-4">01</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">Consultation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We meet to understand your space, lifestyle, and aesthetic goals before a single line is drawn.</p>
+</div>
+<div class="reveal">
+<div class="text-5xl font-serif text-outline-variant mb-4">02</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">Design & Quote</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Detailed drawings and a transparent, itemized proposal are delivered for your review and approval.</p>
+</div>
+<div class="reveal">
+<div class="text-5xl font-serif text-outline-variant mb-4">03</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">Craftsmanship</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Each piece is built in our Little Rock workshop using premium materials and time-honored techniques.</p>
+</div>
+<div class="reveal">
+<div class="text-5xl font-serif text-outline-variant mb-4">04</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">Installation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Our team handles white-glove delivery and installation, leaving your space perfect from day one.</p>
+</div>
+</div>
+</section>
+
+<!-- Materials Section -->
+<section id="materials" class="px-8 md:px-16 mb-stack-lg max-w-screen-2xl mx-auto text-center reveal">
 <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-stack-md uppercase">Our Signature Finishes</h3>
 <div class="flex justify-center space-x-12">
 <div class="flex flex-col items-center">
@@ -253,23 +373,77 @@
 </div>
 </div>
 </section>
+
 <!-- CTA Section -->
-<section class="px-8 md:px-16 py-32 max-w-screen-2xl mx-auto">
+<section class="px-8 md:px-16 py-32 max-w-screen-2xl mx-auto reveal">
 <div class="border border-[#43302E]/10 p-16 md:p-24 text-center bg-stone-50">
 <h2 class="font-headline-lg text-headline-lg text-primary mb-stack-sm">Begin Your Commission</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md max-w-2xl mx-auto">
                     Whether you are an architect with detailed plans or a homeowner with a vision, we are ready to collaborate on your next legacy project.
                 </p>
 <div class="flex flex-col sm:flex-row justify-center gap-6">
-<button class="bg-[#43302E] text-white px-10 py-4 font-label-caps text-label-caps hover:opacity-90 transition-opacity">Schedule Call</button>
-<button class="border border-[#2A3D2E] text-[#2A3D2E] px-10 py-4 font-label-caps text-label-caps flex items-center justify-center space-x-2 hover:bg-stone-100 transition-colors">
+<a href="#contact" class="btn-primary bg-[#43302E] text-white px-10 py-4 font-label-caps text-label-caps inline-block">Schedule Call</a>
+<a href="#process" class="btn-outline border border-[#2A3D2E] text-[#2A3D2E] px-10 py-4 font-label-caps text-label-caps flex items-center justify-center space-x-2">
 <span>Our Process</span>
-<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
-</button>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
 </div>
 </div>
 </section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-surface-container-low py-24">
+<div class="px-8 md:px-16 max-w-screen-2xl mx-auto reveal">
+<div class="max-w-2xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4 text-center">Start a Conversation</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant text-center mb-12">
+                    Tell us about your project and we'll be in touch within one business day.
+                </p>
+
+<div id="form-success" class="form-success mb-8">
+    Thank you — your inquiry has been received. We'll be in touch shortly.
+</div>
+
+<form id="contactForm" novalidate>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 mb-8">
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2" for="field-name">Full Name</label>
+<input class="form-field" id="field-name" name="name" placeholder="Jane Smith" required type="text"/>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2" for="field-email">Email Address</label>
+<input class="form-field" id="field-email" name="email" placeholder="jane@example.com" required type="email"/>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2" for="field-phone">Phone Number</label>
+<input class="form-field" id="field-phone" name="phone" placeholder="(501) 000-0000" type="tel"/>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2" for="field-project">Project Type</label>
+<select class="form-field" id="field-project" name="project_type" required>
+<option value="" disabled selected>Select a type…</option>
+<option value="kitchen">Kitchen Cabinetry</option>
+<option value="library">Library / Built-ins</option>
+<option value="bathroom">Bathroom Vanity</option>
+<option value="furniture">Custom Furniture</option>
+<option value="other">Other</option>
+</select>
+</div>
+</div>
+<div class="mb-10">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2" for="field-message">Message</label>
+<textarea class="form-field" id="field-message" name="message" placeholder="Describe your project, timeline, and any specific requirements…" required rows="5" style="resize:vertical;"></textarea>
+</div>
+<button class="btn-primary w-full bg-[#43302E] text-white py-4 font-label-caps text-label-caps" id="submit-btn" type="submit">
+                        Send Inquiry →
+                    </button>
+</form>
+</div>
+</div>
+</section>
+
 </main>
+
 <!-- Footer -->
 <footer class="w-full border-t border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-8 md:px-16 py-20 max-w-screen-2xl mx-auto w-full">
@@ -281,18 +455,18 @@
 </div>
 <div class="grid grid-cols-2 gap-8">
 <div class="space-y-4">
-<h4 class="font-label-caps text-label-caps text-primary">Inspiration</h4>
+<h4 class="font-label-caps text-label-caps text-primary">Follow Us</h4>
 <ul class="space-y-2">
-<li><a class="font-serif text-sm text-stone-500 hover:text-[#2A3D2E] underline-offset-4 hover:underline transition-all" href="#">Instagram</a></li>
-<li><a class="font-serif text-sm text-stone-500 hover:text-[#2A3D2E] underline-offset-4 hover:underline transition-all" href="#">Pinterest</a></li>
-<li><a class="font-serif text-sm text-stone-500 hover:text-[#2A3D2E] underline-offset-4 hover:underline transition-all" href="#">LinkedIn</a></li>
+<li><a class="font-serif text-sm text-stone-500 hover:text-[#2A3D2E] underline-offset-4 hover:underline transition-all" href="#" aria-label="Instagram">Instagram</a></li>
+<li><a class="font-serif text-sm text-stone-500 hover:text-[#2A3D2E] underline-offset-4 hover:underline transition-all" href="#" aria-label="Pinterest">Pinterest</a></li>
+<li><a class="font-serif text-sm text-stone-500 hover:text-[#2A3D2E] underline-offset-4 hover:underline transition-all" href="#" aria-label="LinkedIn">LinkedIn</a></li>
 </ul>
 </div>
 <div class="space-y-4">
 <h4 class="font-label-caps text-label-caps text-primary">Legal</h4>
 <ul class="space-y-2">
-<li><a class="font-serif text-sm text-stone-500 hover:text-[#2A3D2E] underline-offset-4 hover:underline transition-all" href="#">Privacy Policy</a></li>
-<li><a class="font-serif text-sm text-stone-500 hover:text-[#2A3D2E] underline-offset-4 hover:underline transition-all" href="#">Terms</a></li>
+<li><a class="font-serif text-sm text-stone-500 hover:text-[#2A3D2E] underline-offset-4 hover:underline transition-all" href="#" aria-label="Privacy Policy">Privacy Policy</a></li>
+<li><a class="font-serif text-sm text-stone-500 hover:text-[#2A3D2E] underline-offset-4 hover:underline transition-all" href="#" aria-label="Terms">Terms</a></li>
 </ul>
 </div>
 </div>
@@ -301,14 +475,53 @@
 <p class="font-serif text-sm text-stone-500 leading-relaxed">Join our quarterly update on material sourcing and new collection releases.</p>
 <div class="relative">
 <input class="w-full bg-transparent border-b border-[#43302E] py-2 focus:outline-none focus:border-[#2A3D2E] transition-colors font-serif italic text-stone-600" placeholder="Email Address" type="email"/>
-<button class="absolute right-0 bottom-2 text-[#43302E] hover:text-[#2A3D2E]">
-<span class="material-symbols-outlined" data-icon="east">east</span>
+<button class="absolute right-0 bottom-2 text-[#43302E] hover:text-[#2A3D2E]" aria-label="Subscribe">
+<span class="material-symbols-outlined">east</span>
 </button>
 </div>
 </div>
 </div>
 <div class="px-8 md:px-16 pb-12 text-center">
-<p class="font-serif text-sm tracking-wide text-stone-400">© 2024 Rhinehart Company. Handcrafted Excellence.</p>
+<p class="font-serif text-sm tracking-wide text-stone-400">© 2025 Rhinehart Company. Handcrafted Excellence.</p>
 </div>
 </footer>
+
+<script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Contact form
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submit-btn');
+        const success = document.getElementById('form-success');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        setTimeout(() => {
+            this.reset();
+            success.style.display = 'block';
+            btn.textContent = 'Send Inquiry →';
+            btn.disabled = false;
+            success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 800);
+    });
+
+    // Trigger reveals already in view on load
+    window.addEventListener('load', () => {
+        document.querySelectorAll('.reveal').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) el.classList.add('visible');
+        });
+    });
+</script>
+
 </body></html>
