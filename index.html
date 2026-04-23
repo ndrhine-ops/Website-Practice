@@ -145,6 +145,16 @@
             transform: translateY(-1px);
         }
 
+        /* Portfolio tab active state */
+        .portfolio-tab.tab-active {
+            color: #2c1b1a;
+            border-bottom: 2px solid #2c1b1a;
+            padding-bottom: 16px;
+        }
+        .portfolio-tab:not(.tab-active) {
+            border-bottom: 2px solid transparent;
+        }
+
         /* Form styles */
         .form-field {
             width: 100%;
@@ -223,21 +233,21 @@
 
 <!-- Portfolio Section -->
 <section id="portfolio" class="px-8 md:px-16 mb-stack-md max-w-screen-2xl mx-auto overflow-x-auto reveal">
-<div class="flex space-x-8 border-b border-outline-variant pb-4 min-w-max">
-<button class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-4">All Works</button>
-<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-4">Kitchens</button>
-<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-4">Libraries</button>
-<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-4">Bathrooms</button>
-<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-4">Custom Furniture</button>
+<div class="flex space-x-8 border-b border-outline-variant pb-4 min-w-max" id="portfolio-tabs">
+<button class="portfolio-tab font-label-caps text-label-caps text-primary border-b-2 border-primary pb-4 transition-colors" data-target="section-all">All Works</button>
+<button class="portfolio-tab font-label-caps text-label-caps text-on-surface-variant hover:text-primary pb-4 transition-colors" data-target="section-kitchens">Kitchens</button>
+<button class="portfolio-tab font-label-caps text-label-caps text-on-surface-variant hover:text-primary pb-4 transition-colors" data-target="section-libraries">Libraries</button>
+<button class="portfolio-tab font-label-caps text-label-caps text-on-surface-variant hover:text-primary pb-4 transition-colors" data-target="section-bathrooms">Bathrooms</button>
+<button class="portfolio-tab font-label-caps text-label-caps text-on-surface-variant hover:text-primary pb-4 transition-colors" data-target="section-furniture">Custom Furniture</button>
 </div>
 </section>
 
 <!-- Project Grid -->
-<section class="px-8 md:px-16 mb-stack-lg max-w-screen-2xl mx-auto">
+<section id="section-all" class="px-8 md:px-16 mb-stack-lg max-w-screen-2xl mx-auto">
 <div class="grid grid-cols-12 gap-gutter">
 
 <!-- Featured Project: Kitchen -->
-<div class="col-span-12 md:col-span-8 group cursor-pointer mb-stack-md reveal">
+<div id="section-kitchens" class="col-span-12 md:col-span-8 group cursor-pointer mb-stack-md reveal">
 <div class="portfolio-img mb-stack-sm bg-surface-container">
 <img class="w-full aspect-[16/9] object-cover" alt="Luxurious minimalist kitchen with floor-to-ceiling dark walnut cabinetry" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhdxScweXFxmvIrK-YDMpWBrdM-C5Ga2gk788oSe7BCC3_rirn4t5HlbQQD3ESiaDv5YqACZY7mjE7fQBleEVXdiWINImBuzgSD3rGc-T96902SHrVv5WShsHimkrSyfC_1Keaheep5jB0CZh4MTjexb_q7cOdqm8quOdI-bS4-00H1Fl8IdUq_qCxEah2ORzS6GwVTI7W5bYkaxZ7RjaqfHwU_VnQgJTyRmmYGfu5x5149dehkfu4KxxIRUPWAGYTWpPuAE_hCRo"/>
 </div>
@@ -252,7 +262,7 @@
 </div>
 
 <!-- Secondary Project: Library -->
-<div class="col-span-12 md:col-span-4 group cursor-pointer mb-stack-md reveal">
+<div id="section-libraries" class="col-span-12 md:col-span-4 group cursor-pointer mb-stack-md reveal">
 <div class="portfolio-img mb-stack-sm bg-surface-container">
 <img class="w-full aspect-[3/4] object-cover" alt="Stately private library featuring hand-carved oak bookshelves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdAbPlK9oGp9WY41Wp9l2v8bd1-yDspn1osn2qwjPjaWkf3lhlVXH-4ChoSj-fKhl_dZSACoVirSFrw0iA4Z6oqynVvnRnEZRV-56k4YMDBR-7FBtlS_gd5vpVZoUWDaVUyMDLefyrk_L1q-Ndjvo60Xe_rQ1TSYfUuy8qjVPXfK2UWd4g7WCcnrPpF6jWSsNHLDoYdfWMO-WicVb9sWnzwmkKKOKWikxAj6wl8v-oweaw47lYEsslVvsu2wf7F5XLl_idDIndB0Y"/>
 </div>
@@ -262,7 +272,7 @@
 </div>
 
 <!-- Third Project: Bathroom -->
-<div class="col-span-12 md:col-span-4 group cursor-pointer mb-stack-md reveal">
+<div id="section-bathrooms" class="col-span-12 md:col-span-4 group cursor-pointer mb-stack-md reveal">
 <div class="portfolio-img mb-stack-sm bg-surface-container">
 <img class="w-full aspect-[1/1] object-cover" alt="Minimalist modern bathroom vanity in light maple wood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzm6CwtNQxHnHAFc-NI4SwM0PJ1bTU87LiWcVLtlAfXt7WD4ucul7ExruW7izul9nskYjBhqfMDbN07ezt1FPs_O2p2W4RPZsvGhTZxXnkNetMkX69hUS6WyN_qYDt1grvR_tX8GFqFvDF1ZIBmOtPHau1g6QX4u21eOmFHhu72Ody6Xv3QRzEYIko2er0liMlSQEf72FUUOsxoV6QU14A-zpeqpvFuSQT3Qn3weA-sYzJyFCf_en0mzgW4a5c1MDP-sve6ZJC3yI"/>
 </div>
@@ -272,7 +282,7 @@
 </div>
 
 <!-- Fourth Project: Furniture -->
-<div class="col-span-12 md:col-span-8 group cursor-pointer mb-stack-md reveal">
+<div id="section-furniture" class="col-span-12 md:col-span-8 group cursor-pointer mb-stack-md reveal">
 <div class="portfolio-img mb-stack-sm bg-surface-container">
 <img class="w-full aspect-[21/9] object-cover" alt="Artisanal dining table detail showing intricate wood grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaixEEQz5eSvXb7GHed5iZ-jJguch_cufuvfOu4nrrxtgjX3N-NriWAv_GHwTdexzlkmAwm1ssW0STkz7xNuGLjMh23J3j6nP7amjlpCwmaJkSbIS5lxd2fbQl3s7FD0U7x2B_fSnlfNNqmOvx3UsOtKDSKGuge8JzwxsGl5-ihKq1qLy9xDfQF6-fazTMLiSU5vtND0_R2DcUqWzk739fFDe4Gb-aXU6y9_kPmuXTEWyfRtOIOSgB2goeU_KGO09W6A0K8Nsp4WY"/>
 </div>
@@ -488,16 +498,66 @@
 
 <script>
     // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Trigger reveals already in view on load
+    window.addEventListener('load', () => {
+        document.querySelectorAll('.reveal').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) el.classList.add('visible');
+        });
+    });
+
+    // Portfolio tab scroll + active state
+    const tabs = document.querySelectorAll('.portfolio-tab');
+    const HEADER_OFFSET = 120;
+
+    function setActiveTab(targetId) {
+        tabs.forEach(t => {
+            const isActive = t.dataset.target === targetId;
+            t.classList.toggle('tab-active', isActive);
+            t.classList.toggle('text-primary', isActive);
+            t.classList.toggle('text-on-surface-variant', !isActive);
+        });
+    }
+
+    // Click: smooth scroll to section
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const id = tab.dataset.target;
+            const target = document.getElementById(id);
+            if (!target) return;
+            const top = target.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+            window.scrollTo({ top, behavior: 'smooth' });
+            setActiveTab(id);
+        });
+    });
+
+    // Scroll spy: highlight tab whose section is nearest the top of viewport
+    const sectionIds = ['section-all', 'section-kitchens', 'section-libraries', 'section-bathrooms', 'section-furniture'];
+
+    function onScroll() {
+        let current = 'section-all';
+        for (const id of sectionIds) {
+            const el = document.getElementById(id);
+            if (!el) continue;
+            const top = el.getBoundingClientRect().top;
+            if (top <= HEADER_OFFSET + 40) current = id;
+        }
+        setActiveTab(current);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // run once on load
 
     // Contact form
     document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -513,14 +573,6 @@
             btn.disabled = false;
             success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }, 800);
-    });
-
-    // Trigger reveals already in view on load
-    window.addEventListener('load', () => {
-        document.querySelectorAll('.reveal').forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight) el.classList.add('visible');
-        });
     });
 </script>
 
