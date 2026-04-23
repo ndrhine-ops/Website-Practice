@@ -145,6 +145,16 @@
             transform: translateY(-1px);
         }
 
+        /* Top nav active underline */
+        .nav-link {
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        .nav-link.nav-active {
+            color: #43302E;
+            border-bottom-color: #43302E;
+        }
+
         /* Portfolio tab active state */
         .portfolio-tab.tab-active {
             color: #2c1b1a;
@@ -207,11 +217,11 @@
                 Rhinehart Company
             </div>
 <div class="hidden md:flex space-x-10 items-center">
-<a class="font-serif tracking-tight text-[#43302E] dark:text-white border-b border-[#43302E] dark:border-white pb-1 transition-colors" href="#portfolio">Portfolio</a>
-<a class="font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors" href="#about">About</a>
-<a class="font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors" href="#process">Process</a>
-<a class="font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors" href="#materials">Materials</a>
-<a class="font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors" href="#contact">Contact</a>
+<a class="nav-link font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors pb-1" href="#portfolio" data-section="portfolio">Portfolio</a>
+<a class="nav-link font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors pb-1" href="#about" data-section="about">About</a>
+<a class="nav-link font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors pb-1" href="#process" data-section="process">Process</a>
+<a class="nav-link font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors pb-1" href="#materials" data-section="materials">Materials</a>
+<a class="nav-link font-serif tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#43302E] dark:hover:text-stone-200 transition-colors pb-1" href="#contact" data-section="contact">Contact</a>
 </div>
 <a href="#contact" class="btn-primary bg-[#43302E] text-white px-6 py-2 rounded-DEFAULT font-label-caps text-label-caps">
                 Consultation
@@ -517,9 +527,34 @@
         });
     });
 
-    // Portfolio tab scroll + active state
-    const tabs = document.querySelectorAll('.portfolio-tab');
     const HEADER_OFFSET = 120;
+
+    // ── Top nav scroll spy ──
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navSections = ['portfolio', 'about', 'process', 'materials', 'contact'];
+
+    function setActiveNav(sectionId) {
+        navLinks.forEach(a => {
+            const isActive = a.dataset.section === sectionId;
+            a.classList.toggle('nav-active', isActive);
+        });
+    }
+
+    function onNavScroll() {
+        let current = navSections[0];
+        for (const id of navSections) {
+            const el = document.getElementById(id);
+            if (!el) continue;
+            if (el.getBoundingClientRect().top <= HEADER_OFFSET + 40) current = id;
+        }
+        setActiveNav(current);
+    }
+
+    window.addEventListener('scroll', onNavScroll, { passive: true });
+    onNavScroll();
+
+    // ── Portfolio filter tab scroll + active state ──
+    const tabs = document.querySelectorAll('.portfolio-tab');
 
     function setActiveTab(targetId) {
         tabs.forEach(t => {
@@ -530,7 +565,6 @@
         });
     }
 
-    // Click: smooth scroll to section
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const id = tab.dataset.target;
@@ -542,22 +576,20 @@
         });
     });
 
-    // Scroll spy: highlight tab whose section is nearest the top of viewport
-    const sectionIds = ['section-all', 'section-kitchens', 'section-libraries', 'section-bathrooms', 'section-furniture'];
+    const portfolioSectionIds = ['section-all', 'section-kitchens', 'section-libraries', 'section-bathrooms', 'section-furniture'];
 
-    function onScroll() {
+    function onPortfolioScroll() {
         let current = 'section-all';
-        for (const id of sectionIds) {
+        for (const id of portfolioSectionIds) {
             const el = document.getElementById(id);
             if (!el) continue;
-            const top = el.getBoundingClientRect().top;
-            if (top <= HEADER_OFFSET + 40) current = id;
+            if (el.getBoundingClientRect().top <= HEADER_OFFSET + 40) current = id;
         }
         setActiveTab(current);
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // run once on load
+    window.addEventListener('scroll', onPortfolioScroll, { passive: true });
+    onPortfolioScroll();
 
     // Contact form
     document.getElementById('contactForm').addEventListener('submit', function(e) {
