@@ -541,6 +541,10 @@
     }
 
     function onNavScroll() {
+        // If scrolled to bottom, always activate the last section
+        const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 10;
+        if (atBottom) { setActiveNav(navSections[navSections.length - 1]); return; }
+
         let current = navSections[0];
         for (const id of navSections) {
             const el = document.getElementById(id);
