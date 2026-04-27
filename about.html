@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Rhinehart Cabinetry — our story, our values, and our commitment to fine custom woodworking.">
+  <title>About — Rhinehart Cabinetry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+    .story-img {
+      width: 100%; aspect-ratio: 3/4;
+      background:
+        repeating-linear-gradient(88deg, transparent 0, transparent 6px, rgba(0,0,0,0.025) 6px, rgba(0,0,0,0.025) 7px),
+        linear-gradient(165deg, #c4944a 0%, #a07235 30%, #8b5e28 60%, #c4a055 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-cond); font-size: 0.75rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(0,0,0,0.25);
+    }
+    @media (max-width:1000px) {
+      .story-grid { grid-template-columns: 1fr; }
+    }
+    .lead-text {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--black);
+      margin-bottom: 2rem;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileClose">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-gold">Get a Quote</a>
+</div>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="nav-brand" aria-label="Rhinehart Cabinetry">
+    <svg viewBox="0 0 230 72" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="94" height="72" fill="#0a0a0a"/>
+      <polygon points="47,7 87,36 47,65 7,36" fill="none" stroke="white" stroke-width="2.2"/>
+      <text x="37" y="46" font-family="Georgia,serif" font-size="24" fill="white" font-weight="bold" font-style="italic">R</text>
+      <text x="46" y="47" font-family="Georgia,serif" font-size="21" fill="white" font-weight="bold" font-style="italic" opacity="0.85">C</text>
+      <rect x="94" y="0" width="2" height="72" fill="white"/>
+      <rect x="96" y="0" width="134" height="72" fill="white"/>
+      <g transform="translate(108,12)" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M2,33 L2,40 L99,40 L110,33 L110,26 L97,19 L69,19 L64,12 L45,12 L40,19 L2,19 Z" stroke-width="1.6"/>
+        <path d="M79,19 C79,19 91,15 95,24 C99,33 91,40 79,40" stroke-width="1.4"/>
+        <ellipse cx="15" cy="29" rx="9" ry="10" stroke-width="1.4"/>
+        <rect x="44" y="13" width="18" height="7" rx="1" stroke-width="1.3"/>
+        <circle cx="56" cy="29" r="4" stroke-width="1.2"/>
+        <line x1="56" y1="25" x2="56" y2="33" stroke-width="0.9"/>
+        <line x1="52" y1="29" x2="60" y2="29" stroke-width="0.9"/>
+      </g>
+      <rect x="1" y="1" width="228" height="70" fill="none" stroke="white" stroke-width="2.5"/>
+    </svg>
+  </a>
+  <ul class="nav-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="btn btn-gold">Get a Quote</a>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="label page-hero-label">About Us</div>
+    <h1 class="h1 page-hero-title">Built on <em>tradition.</em></h1>
+    <p class="page-hero-sub">Decades of woodworking craft, carried forward with modern precision and an unwavering commitment to quality.</p>
+  </div>
+</div>
+
+<!-- Story -->
+<section class="section" style="background:var(--white)">
+  <div class="wrap">
+    <div class="story-grid">
+      <div>
+        <div class="label reveal" style="margin-bottom:1.25rem">Our Story</div>
+        <h2 class="h2 reveal d1">Where every joint<br>tells a <em>story</em></h2>
+        <p class="lead-text reveal d2">"We don't just build cabinets — we build the spaces where life happens."</p>
+        <p class="body-t reveal d2">Rhinehart Cabinetry began with a simple conviction: that exceptional woodworking shouldn't be reserved for a privileged few. Founded on decades of hands-on experience, we've grown from a small workshop into a trusted name in custom cabinetry — without ever losing sight of what matters most: the craft itself.</p>
+        <p class="body-t reveal d2">We work directly with homeowners, interior designers, and contractors to bring visions to life. Every project starts with listening, and ends with work that exceeds expectations.</p>
+        <p class="body-t reveal d2">When you work with Rhinehart, you're not just getting a cabinet company — you're getting a partner who cares as much about your space as you do.</p>
+      </div>
+      <div class="reveal d2">
+        <div class="story-img">Add your shop / team photo here</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section" style="background:var(--cream)">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:clamp(3rem,6vw,5rem)">
+      <div class="label reveal" style="justify-content:center;margin-bottom:1rem">What We Stand For</div>
+      <h2 class="h2 reveal d1">Our core values</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#c9a96e" stroke-width="1.6"><path d="M18 3 L33 10 L33 26 L18 33 L3 26 L3 10 Z"/><circle cx="18" cy="18" r="6"/></svg>
+        <h3 class="h3" style="margin-top:1.25rem">Craftsmanship</h3>
+        <p class="body-t" style="margin-top:0.75rem">We hold ourselves to the highest standard of woodworking, from the species of wood we select to the final coat of finish. Quality is not a feature — it's the foundation.</p>
+      </div>
+      <div class="value-card reveal d1">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#c9a96e" stroke-width="1.6"><rect x="4" y="4" width="28" height="28" rx="2"/><path d="M12 18l5 5 8-8"/></svg>
+        <h3 class="h3" style="margin-top:1.25rem">Integrity</h3>
+        <p class="body-t" style="margin-top:0.75rem">Transparent quotes, honest timelines, and no hidden costs. We mean what we say and stand behind every piece we make — no exceptions, no excuses.</p>
+      </div>
+      <div class="value-card reveal d2">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#c9a96e" stroke-width="1.6"><circle cx="18" cy="18" r="14"/><path d="M18 4 C18 4 26 12 26 18 C26 24 18 32 18 32 C18 32 10 24 10 18 C10 12 18 4 18 4"/><line x1="4" y1="18" x2="32" y2="18"/></svg>
+        <h3 class="h3" style="margin-top:1.25rem">Longevity</h3>
+        <p class="body-t" style="margin-top:0.75rem">We build for generations. The materials we choose, the joints we cut, the finishes we apply — all are selected for durability that outlasts trends and withstands decades of daily use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Milestones -->
+<section class="section" style="background:var(--white)">
+  <div class="wrap" style="max-width:800px">
+    <div class="label reveal" style="margin-bottom:1.25rem">Our History</div>
+    <h2 class="h2 reveal d1" style="margin-bottom:3rem">A few <em>milestones</em></h2>
+    <div class="milestones">
+      <div class="milestone reveal">
+        <span class="milestone-year">1998</span>
+        <p class="milestone-text"><strong>Founded.</strong> Rhinehart Cabinetry opens its doors in a small shop with one craftsman and a commitment to handmade quality over mass production.</p>
+      </div>
+      <div class="milestone reveal d1">
+        <span class="milestone-year">2005</span>
+        <p class="milestone-text"><strong>First 100 kitchens.</strong> Word of mouth drives our growth. We expand the shop and add our first dedicated finishing booth for professional-grade lacquer and stain work.</p>
+      </div>
+      <div class="milestone reveal d2">
+        <span class="milestone-year">2012</span>
+        <p class="milestone-text"><strong>Commercial work begins.</strong> We start partnering with local contractors and interior designers on commercial installations — restaurants, offices, and boutique retail spaces.</p>
+      </div>
+      <div class="milestone reveal d3">
+        <span class="milestone-year">2018</span>
+        <p class="milestone-text"><strong>500th project.</strong> A milestone we're proud of — 500 completed projects, all built by hand, all standing strong. We celebrate with a full shop expansion.</p>
+      </div>
+      <div class="milestone reveal d4">
+        <span class="milestone-year">Today</span>
+        <p class="milestone-text"><strong>Still building.</strong> Same commitment, refined craft. We continue to take on projects large and small, always with the same care that started it all in 1998.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="wrap">
+    <h2 class="h2">Let's build something <em>together</em></h2>
+    <p>Ready to start your project? We offer free consultations with no obligation.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn btn-ghost">Contact Us</a>
+      <a href="services.html" class="btn" style="background:rgba(0,0,0,0.12);color:var(--black)">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-body">
+    <div class="footer-brand">
+      <svg viewBox="0 0 230 72" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="94" height="72" fill="#0a0a0a"/>
+        <polygon points="47,7 87,36 47,65 7,36" fill="none" stroke="white" stroke-width="2.2"/>
+        <text x="37" y="46" font-family="Georgia,serif" font-size="24" fill="white" font-weight="bold" font-style="italic">R</text>
+        <text x="46" y="47" font-family="Georgia,serif" font-size="21" fill="white" font-weight="bold" font-style="italic" opacity="0.85">C</text>
+        <rect x="94" y="0" width="2" height="72" fill="white"/>
+        <rect x="96" y="0" width="134" height="72" fill="white"/>
+        <g transform="translate(108,12)" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <path d="M2,33 L2,40 L99,40 L110,33 L110,26 L97,19 L69,19 L64,12 L45,12 L40,19 L2,19 Z" stroke-width="1.6"/>
+          <path d="M79,19 C79,19 91,15 95,24 C99,33 91,40 79,40" stroke-width="1.4"/>
+          <ellipse cx="15" cy="29" rx="9" ry="10" stroke-width="1.4"/>
+          <rect x="44" y="13" width="18" height="7" rx="1" stroke-width="1.3"/>
+          <circle cx="56" cy="29" r="4" stroke-width="1.2"/>
+        </g>
+        <rect x="1" y="1" width="228" height="70" fill="none" stroke="white" stroke-width="2.5"/>
+      </svg>
+      <p>Fine custom cabinetry crafted for homes and businesses across the region.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Kitchen Cabinetry</a></li>
+        <li><a href="services.html">Bathroom Vanities</a></li>
+        <li><a href="services.html">Built-In Storage</a></li>
+        <li><a href="services.html">Custom Furniture</a></li>
+        <li><a href="services.html">Home Office</a></li>
+        <li><a href="services.html">Finishing &amp; Refinishing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <address>(555) 000-0000<br>info@rhinehartcabinetry.com<br><br>Free Estimates Available</address>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>© 2025 Rhinehart Cabinetry · All Rights Reserved</span>
+    <a href="contact.html">Get a Free Quote →</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

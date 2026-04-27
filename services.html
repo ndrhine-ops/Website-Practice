@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rhinehart Cabinetry services — kitchen cabinetry, bathroom vanities, built-ins, custom furniture, home office, and finishing.">
+  <title>Services — Rhinehart Cabinetry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .svc-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(0,0,0,0.08);
+      margin-top: clamp(4rem,8vw,6rem);
+    }
+    .svc-detail-card {
+      background: var(--white);
+      padding: 3rem 2.5rem;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .svc-detail-card:hover {
+      border-bottom-color: var(--gold);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+    }
+    .svc-detail-num {
+      font-family: var(--ff-serif);
+      font-size: 4rem;
+      font-weight: 700;
+      color: rgba(201,169,110,0.18);
+      line-height: 1;
+      margin-bottom: 1.25rem;
+    }
+    .svc-detail-icon { color: var(--gold-dk); margin-bottom: 1rem; }
+    .svc-detail-card .h3 { margin-bottom: 0.875rem; }
+    .svc-detail-card .body-t { color: var(--mid); }
+    .svc-detail-card ul {
+      margin-top: 1rem;
+      display: flex; flex-direction: column; gap: 0.4rem;
+    }
+    .svc-detail-card ul li {
+      font-size: 0.9rem; font-weight: 300;
+      color: var(--mid); padding-left: 1rem;
+      position: relative;
+    }
+    .svc-detail-card ul li::before {
+      content: '—';
+      position: absolute; left: 0;
+      color: var(--gold); font-size: 0.75rem;
+    }
+    @media (max-width:680px) {
+      .svc-detail-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileClose">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-gold">Get a Quote</a>
+</div>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="nav-brand" aria-label="Rhinehart Cabinetry">
+    <svg viewBox="0 0 230 72" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="94" height="72" fill="#0a0a0a"/>
+      <polygon points="47,7 87,36 47,65 7,36" fill="none" stroke="white" stroke-width="2.2"/>
+      <text x="37" y="46" font-family="Georgia,serif" font-size="24" fill="white" font-weight="bold" font-style="italic">R</text>
+      <text x="46" y="47" font-family="Georgia,serif" font-size="21" fill="white" font-weight="bold" font-style="italic" opacity="0.85">C</text>
+      <rect x="94" y="0" width="2" height="72" fill="white"/>
+      <rect x="96" y="0" width="134" height="72" fill="white"/>
+      <g transform="translate(108,12)" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M2,33 L2,40 L99,40 L110,33 L110,26 L97,19 L69,19 L64,12 L45,12 L40,19 L2,19 Z" stroke-width="1.6"/>
+        <path d="M79,19 C79,19 91,15 95,24 C99,33 91,40 79,40" stroke-width="1.4"/>
+        <ellipse cx="15" cy="29" rx="9" ry="10" stroke-width="1.4"/>
+        <rect x="44" y="13" width="18" height="7" rx="1" stroke-width="1.3"/>
+        <circle cx="56" cy="29" r="4" stroke-width="1.2"/>
+        <line x1="56" y1="25" x2="56" y2="33" stroke-width="0.9"/>
+        <line x1="52" y1="29" x2="60" y2="29" stroke-width="0.9"/>
+      </g>
+      <rect x="1" y="1" width="228" height="70" fill="none" stroke="white" stroke-width="2.5"/>
+    </svg>
+  </a>
+  <ul class="nav-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="btn btn-gold">Get a Quote</a>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="label page-hero-label">What We Do</div>
+    <h1 class="h1 page-hero-title">Our <em>services</em></h1>
+    <p class="page-hero-sub">From full kitchen renovations to single custom pieces — every project gets our full attention and craft.</p>
+  </div>
+</div>
+
+<!-- Services Dark Preview -->
+<section style="background:var(--black);padding:clamp(4rem,8vw,7rem) 0">
+  <div class="wrap">
+    <div style="max-width:680px;margin-bottom:3rem">
+      <div class="label reveal" style="margin-bottom:1.25rem">Our Craft</div>
+      <h2 class="h2 light reveal d1">Six ways we can<br>transform your <em>space</em></h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <div class="svc-card-num">01</div>
+        <svg class="svc-card-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="8" width="26" height="18" rx="1"/><path d="M2 14h26M9 14v12M21 14v12"/><path d="M2 8l5-5h16l5 5"/></svg>
+        <h3 class="h3">Kitchen Cabinetry</h3>
+        <p class="body-t">Full kitchen design and installation — classic shaker to contemporary frameless, tailored to your space.</p>
+      </div>
+      <div class="svc-card reveal d1">
+        <div class="svc-card-num">02</div>
+        <svg class="svc-card-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="10" width="24" height="17" rx="1"/><rect x="7" y="4" width="16" height="6" rx="1"/><path d="M3 18h24M9 18v9M21 18v9"/></svg>
+        <h3 class="h3">Bathroom Vanities</h3>
+        <p class="body-t">Custom vanity cabinetry that maximizes storage while elevating the aesthetic of any bathroom.</p>
+      </div>
+      <div class="svc-card reveal d2">
+        <div class="svc-card-num">03</div>
+        <svg class="svc-card-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="10" height="26" rx="1"/><rect x="18" y="2" width="10" height="26" rx="1"/><path d="M2 9h10M2 16h10M2 23h10M18 9h10M18 16h10M18 23h10"/></svg>
+        <h3 class="h3">Built-In Storage</h3>
+        <p class="body-t">Floor-to-ceiling built-ins, bookcases, entertainment centers, and custom closet systems.</p>
+      </div>
+      <div class="svc-card reveal d1">
+        <div class="svc-card-num">04</div>
+        <svg class="svc-card-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="26" height="20" rx="1"/><path d="M2 13h26M9 5v20M19 5v20"/></svg>
+        <h3 class="h3">Custom Furniture</h3>
+        <p class="body-t">One-of-a-kind pieces built to your exact specifications — desks, tables, beds, and beyond.</p>
+      </div>
+      <div class="svc-card reveal d2">
+        <div class="svc-card-num">05</div>
+        <svg class="svc-card-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 28V13L15 5l11 8v15"/><rect x="10" y="18" width="10" height="10"/><path d="M4 18h22"/></svg>
+        <h3 class="h3">Home Office</h3>
+        <p class="body-t">Purpose-built office cabinetry and storage systems to enhance focus and organize your workspace.</p>
+      </div>
+      <div class="svc-card reveal d3">
+        <div class="svc-card-num">06</div>
+        <svg class="svc-card-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="15" cy="12" r="8"/><path d="M8 12 A7 7 0 0 1 22 12"/><path d="M6 22 C6 26 24 26 24 22"/><line x1="15" y1="4" x2="15" y2="28"/><line x1="8" y1="12" x2="22" y2="12"/></svg>
+        <h3 class="h3">Finishing &amp; Refinishing</h3>
+        <p class="body-t">Expert paint, stain, and lacquer finishing to complete new installations or breathe life into existing cabinetry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Detailed Light -->
+<section style="background:var(--cream);padding:clamp(5rem,10vw,8rem) 0">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:clamp(3rem,6vw,5rem)">
+      <div class="label reveal" style="justify-content:center;margin-bottom:1rem">In Detail</div>
+      <h2 class="h2 reveal d1">What each service includes</h2>
+    </div>
+    <div class="svc-detail-grid">
+      <div class="svc-detail-card reveal">
+        <div class="svc-detail-num">01</div>
+        <svg class="svc-detail-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="9" width="32" height="22" rx="1"/><path d="M2 17h32M11 17v14M25 17v14"/><path d="M2 9l6-6h20l6 6"/></svg>
+        <h3 class="h3">Kitchen Cabinetry</h3>
+        <p class="body-t">The heart of your home deserves the best. We design and build kitchen cabinetry that balances beauty, function, and durability.</p>
+        <ul>
+          <li>Base, wall, and tall cabinet runs</li>
+          <li>Frameless and face-frame construction</li>
+          <li>Shaker, flat-panel, raised-panel, and custom door styles</li>
+          <li>Pull-out shelves, lazy susans, and drawer organizers</li>
+          <li>Island and peninsula cabinetry</li>
+        </ul>
+      </div>
+      <div class="svc-detail-card reveal d1">
+        <div class="svc-detail-num">02</div>
+        <svg class="svc-detail-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="12" width="28" height="20" rx="1"/><rect x="8" y="5" width="20" height="7" rx="1"/><path d="M4 22h28M10 22v10M26 22v10"/></svg>
+        <h3 class="h3">Bathroom Vanities</h3>
+        <p class="body-t">Custom bath cabinetry built to handle the demands of daily use while looking impeccable for years to come.</p>
+        <ul>
+          <li>Single and double vanity configurations</li>
+          <li>Floating and floor-mount designs</li>
+          <li>Medicine cabinets and linen towers</li>
+          <li>Built-in hampers and specialty storage</li>
+          <li>Moisture-resistant construction and finishes</li>
+        </ul>
+      </div>
+      <div class="svc-detail-card reveal">
+        <div class="svc-detail-num">03</div>
+        <svg class="svc-detail-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="13" height="32" rx="1"/><rect x="21" y="2" width="13" height="32" rx="1"/><path d="M2 10h13M2 19h13M2 28h13M21 10h13M21 19h13M21 28h13"/></svg>
+        <h3 class="h3">Built-In Storage</h3>
+        <p class="body-t">Make every inch work harder. Our built-ins are designed around your life — not a catalog layout.</p>
+        <ul>
+          <li>Bookcases and library walls</li>
+          <li>Entertainment centers with cable management</li>
+          <li>Mudroom cubbies and bench seats</li>
+          <li>Closet systems and wardrobe built-ins</li>
+          <li>Window seats with hidden storage</li>
+        </ul>
+      </div>
+      <div class="svc-detail-card reveal d1">
+        <div class="svc-detail-num">04</div>
+        <svg class="svc-detail-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="32" height="24" rx="1"/><path d="M2 15h32M10 6v24M24 6v24"/></svg>
+        <h3 class="h3">Custom Furniture</h3>
+        <p class="body-t">When you can't find exactly what you're looking for, we build it. Every piece is made to measure and made to impress.</p>
+        <ul>
+          <li>Dining tables and benches</li>
+          <li>Desks and credenzas</li>
+          <li>Bed frames and headboards</li>
+          <li>Coffee tables and side tables</li>
+          <li>One-of-a-kind statement pieces</li>
+        </ul>
+      </div>
+      <div class="svc-detail-card reveal">
+        <div class="svc-detail-num">05</div>
+        <svg class="svc-detail-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 34V16L18 6l13 10v18"/><rect x="12" y="22" width="12" height="12"/><path d="M5 22h26"/></svg>
+        <h3 class="h3">Home Office</h3>
+        <p class="body-t">Purpose-built cabinetry for the modern home office — designed for productivity and built to look exceptional on any video call.</p>
+        <ul>
+          <li>Built-in desk systems and workstations</li>
+          <li>Floor-to-ceiling bookcase walls</li>
+          <li>Filing and document storage</li>
+          <li>Cable management integration</li>
+          <li>Convertible and Murphy desk options</li>
+        </ul>
+      </div>
+      <div class="svc-detail-card reveal d1">
+        <div class="svc-detail-num">06</div>
+        <svg class="svc-detail-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="18" cy="14" r="9"/><path d="M10 14 A8 8 0 0 1 26 14"/><path d="M7 26 C7 32 29 32 29 26"/><line x1="18" y1="5" x2="18" y2="34"/><line x1="10" y1="14" x2="26" y2="14"/></svg>
+        <h3 class="h3">Finishing &amp; Refinishing</h3>
+        <p class="body-t">A great finish is what separates good cabinetry from great cabinetry. We take our finishing as seriously as our joinery.</p>
+        <ul>
+          <li>Spray lacquer in any sheen level</li>
+          <li>Stain matching and custom color formulation</li>
+          <li>Paint and primed finishes</li>
+          <li>Glazing and antiquing effects</li>
+          <li>Cabinet door and drawer face refinishing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section style="background:var(--charcoal);padding:clamp(5rem,10vw,8rem) 0">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,6vw,6rem);align-items:start" class="process-layout">
+      <div>
+        <div class="label reveal" style="margin-bottom:1.25rem">Our Process</div>
+        <h2 class="h2 light reveal d1">From idea<br>to <em>installation</em></h2>
+        <p class="body-t light reveal d2" style="margin-top:1rem">Every great project starts with a conversation. We guide you from concept to completion — no guesswork, no surprises.</p>
+        <a href="contact.html" class="btn btn-gold reveal d3" style="margin-top:2rem">
+          Start With a Call
+          <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7.5h11M8.5 3l4.5 4.5L8.5 12"/></svg>
+        </a>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal"><span class="step-n">01</span><div><p class="step-title">Free Consultation</p><p class="step-body">We visit your space, listen to your goals, and walk through possibilities. No commitment required.</p></div></div>
+        <div class="process-step reveal d1"><span class="step-n">02</span><div><p class="step-title">Design &amp; Quote</p><p class="step-body">Detailed drawings and a transparent, line-item quote for your review before any work begins.</p></div></div>
+        <div class="process-step reveal d2"><span class="step-n">03</span><div><p class="step-title">Build</p><p class="step-body">Every piece built by hand in our shop using materials selected specifically for your project.</p></div></div>
+        <div class="process-step reveal d3"><span class="step-n">04</span><div><p class="step-title">Install &amp; Finish</p><p class="step-body">Precise installation, clean site, final walkthrough. We don't sign off until you're completely satisfied.</p></div></div>
+      </div>
+    </div>
+  </div>
+  <style>.process-layout { @media (max-width:1000px) { grid-template-columns:1fr; } }</style>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="wrap">
+    <h2 class="h2">Ready to get <em>started?</em></h2>
+    <p>Contact us for a free consultation. We'll bring the tape measure.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn btn-ghost">Request a Quote</a>
+      <a href="gallery.html" class="btn" style="background:rgba(0,0,0,0.12);color:var(--black)">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-body">
+    <div class="footer-brand">
+      <svg viewBox="0 0 230 72" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="94" height="72" fill="#0a0a0a"/>
+        <polygon points="47,7 87,36 47,65 7,36" fill="none" stroke="white" stroke-width="2.2"/>
+        <text x="37" y="46" font-family="Georgia,serif" font-size="24" fill="white" font-weight="bold" font-style="italic">R</text>
+        <text x="46" y="47" font-family="Georgia,serif" font-size="21" fill="white" font-weight="bold" font-style="italic" opacity="0.85">C</text>
+        <rect x="94" y="0" width="2" height="72" fill="white"/>
+        <rect x="96" y="0" width="134" height="72" fill="white"/>
+        <g transform="translate(108,12)" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <path d="M2,33 L2,40 L99,40 L110,33 L110,26 L97,19 L69,19 L64,12 L45,12 L40,19 L2,19 Z" stroke-width="1.6"/>
+          <path d="M79,19 C79,19 91,15 95,24 C99,33 91,40 79,40" stroke-width="1.4"/>
+          <ellipse cx="15" cy="29" rx="9" ry="10" stroke-width="1.4"/>
+          <rect x="44" y="13" width="18" height="7" rx="1" stroke-width="1.3"/>
+          <circle cx="56" cy="29" r="4" stroke-width="1.2"/>
+        </g>
+        <rect x="1" y="1" width="228" height="70" fill="none" stroke="white" stroke-width="2.5"/>
+      </svg>
+      <p>Fine custom cabinetry crafted for homes and businesses across the region.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Kitchen Cabinetry</a></li>
+        <li><a href="services.html">Bathroom Vanities</a></li>
+        <li><a href="services.html">Built-In Storage</a></li>
+        <li><a href="services.html">Custom Furniture</a></li>
+        <li><a href="services.html">Home Office</a></li>
+        <li><a href="services.html">Finishing &amp; Refinishing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <address>(555) 000-0000<br>info@rhinehartcabinetry.com<br><br>Free Estimates Available</address>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>© 2025 Rhinehart Cabinetry · All Rights Reserved</span>
+    <a href="contact.html">Get a Free Quote →</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

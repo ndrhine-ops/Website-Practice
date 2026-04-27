@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rhinehart Cabinetry gallery — view our completed custom cabinet projects including kitchens, bathrooms, built-ins, and furniture.">
+  <title>Gallery — Rhinehart Cabinetry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .gallery-section { padding: clamp(4rem,8vw,7rem) 0; background: var(--white); }
+    .g-fill { display: flex; align-items: center; justify-content: center; font-family: var(--ff-cond); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+  </style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileClose">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-gold">Get a Quote</a>
+</div>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="nav-brand" aria-label="Rhinehart Cabinetry">
+    <svg viewBox="0 0 230 72" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="94" height="72" fill="#0a0a0a"/>
+      <polygon points="47,7 87,36 47,65 7,36" fill="none" stroke="white" stroke-width="2.2"/>
+      <text x="37" y="46" font-family="Georgia,serif" font-size="24" fill="white" font-weight="bold" font-style="italic">R</text>
+      <text x="46" y="47" font-family="Georgia,serif" font-size="21" fill="white" font-weight="bold" font-style="italic" opacity="0.85">C</text>
+      <rect x="94" y="0" width="2" height="72" fill="white"/>
+      <rect x="96" y="0" width="134" height="72" fill="white"/>
+      <g transform="translate(108,12)" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M2,33 L2,40 L99,40 L110,33 L110,26 L97,19 L69,19 L64,12 L45,12 L40,19 L2,19 Z" stroke-width="1.6"/>
+        <path d="M79,19 C79,19 91,15 95,24 C99,33 91,40 79,40" stroke-width="1.4"/>
+        <ellipse cx="15" cy="29" rx="9" ry="10" stroke-width="1.4"/>
+        <rect x="44" y="13" width="18" height="7" rx="1" stroke-width="1.3"/>
+        <circle cx="56" cy="29" r="4" stroke-width="1.2"/>
+        <line x1="56" y1="25" x2="56" y2="33" stroke-width="0.9"/>
+        <line x1="52" y1="29" x2="60" y2="29" stroke-width="0.9"/>
+      </g>
+      <rect x="1" y="1" width="228" height="70" fill="none" stroke="white" stroke-width="2.5"/>
+    </svg>
+  </a>
+  <ul class="nav-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="btn btn-gold">Get a Quote</a>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="label page-hero-label">Portfolio</div>
+    <h1 class="h1 page-hero-title">Our <em>work</em></h1>
+    <p class="page-hero-sub">A selection of completed projects — each one custom-built for the space, the client, and the life lived inside it.</p>
+  </div>
+</div>
+
+<!-- Gallery -->
+<section class="gallery-section">
+  <div class="wrap">
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-cat="all">All Projects</button>
+      <button class="filter-tab" data-cat="kitchen">Kitchen</button>
+      <button class="filter-tab" data-cat="bath">Bathroom</button>
+      <button class="filter-tab" data-cat="builtins">Built-Ins</button>
+      <button class="filter-tab" data-cat="furniture">Furniture</button>
+      <button class="filter-tab" data-cat="office">Home Office</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid">
+
+      <!-- Kitchen -->
+      <div class="gallery-item reveal" data-cat="kitchen" data-label="Oak Shaker Kitchen · 2024">
+        <div class="g-fill" style="background:linear-gradient(135deg,#7a5225,#3e2810)">Drop kitchen photo here</div>
+        <div class="g-overlay"><span class="g-label">Oak Shaker Kitchen · 2024</span></div>
+      </div>
+      <div class="gallery-item reveal d1" data-cat="kitchen" data-label="White Painted Shaker Kitchen">
+        <div class="g-fill" style="background:linear-gradient(135deg,#c8c0b0,#a09888)">Drop kitchen photo here</div>
+        <div class="g-overlay"><span class="g-label">White Painted Shaker Kitchen</span></div>
+      </div>
+      <div class="gallery-item reveal d2" data-cat="kitchen" data-label="Walnut Contemporary Kitchen">
+        <div class="g-fill" style="background:linear-gradient(135deg,#3d2510,#1e1208)">Drop kitchen photo here</div>
+        <div class="g-overlay"><span class="g-label">Walnut Contemporary Kitchen</span></div>
+      </div>
+      <div class="gallery-item reveal d3" data-cat="kitchen" data-label="Cherry Traditional Kitchen">
+        <div class="g-fill" style="background:linear-gradient(135deg,#6b2218,#3d1410)">Drop kitchen photo here</div>
+        <div class="g-overlay"><span class="g-label">Cherry Traditional Kitchen</span></div>
+      </div>
+
+      <!-- Bath -->
+      <div class="gallery-item reveal" data-cat="bath" data-label="Master Bathroom Vanity">
+        <div class="g-fill" style="background:linear-gradient(135deg,#9a7535,#5a4020)">Drop bathroom photo here</div>
+        <div class="g-overlay"><span class="g-label">Master Bathroom Vanity</span></div>
+      </div>
+      <div class="gallery-item reveal d1" data-cat="bath" data-label="Floating Vanity — Navy">
+        <div class="g-fill" style="background:linear-gradient(135deg,#1e2d3d,#0f1a28)">Drop bathroom photo here</div>
+        <div class="g-overlay"><span class="g-label">Floating Vanity — Navy</span></div>
+      </div>
+      <div class="gallery-item reveal d2" data-cat="bath" data-label="Guest Bath Vanity with Tower">
+        <div class="g-fill" style="background:linear-gradient(135deg,#c4a46a,#8a6835)">Drop bathroom photo here</div>
+        <div class="g-overlay"><span class="g-label">Guest Bath Vanity with Tower</span></div>
+      </div>
+
+      <!-- Built-Ins -->
+      <div class="gallery-item reveal" data-cat="builtins" data-label="Library Wall Built-In">
+        <div class="g-fill" style="background:linear-gradient(135deg,#4a3018,#2a1c0c)">Drop photo here</div>
+        <div class="g-overlay"><span class="g-label">Library Wall Built-In</span></div>
+      </div>
+      <div class="gallery-item reveal d1" data-cat="builtins" data-label="Entertainment Center">
+        <div class="g-fill" style="background:linear-gradient(135deg,#1a1a1a,#0d0d0d)">Drop photo here</div>
+        <div class="g-overlay"><span class="g-label">Entertainment Center</span></div>
+      </div>
+      <div class="gallery-item reveal d2" data-cat="builtins" data-label="Mudroom Built-In Cubbies">
+        <div class="g-fill" style="background:linear-gradient(135deg,#3d5040,#252e28)">Drop photo here</div>
+        <div class="g-overlay"><span class="g-label">Mudroom Built-In Cubbies</span></div>
+      </div>
+
+      <!-- Furniture -->
+      <div class="gallery-item reveal" data-cat="furniture" data-label="Custom Walnut Dining Table">
+        <div class="g-fill" style="background:linear-gradient(135deg,#5a3d18,#3a2810)">Drop furniture photo here</div>
+        <div class="g-overlay"><span class="g-label">Custom Walnut Dining Table</span></div>
+      </div>
+      <div class="gallery-item reveal d1" data-cat="furniture" data-label="Maple Desk with Drawers">
+        <div class="g-fill" style="background:linear-gradient(135deg,#d4b070,#a88040)">Drop furniture photo here</div>
+        <div class="g-overlay"><span class="g-label">Maple Desk with Drawers</span></div>
+      </div>
+
+      <!-- Office -->
+      <div class="gallery-item reveal" data-cat="office" data-label="Home Office Suite — Ebony Stain">
+        <div class="g-fill" style="background:linear-gradient(135deg,#1a1410,#0d0b09)">Drop office photo here</div>
+        <div class="g-overlay"><span class="g-label">Home Office Suite — Ebony Stain</span></div>
+      </div>
+      <div class="gallery-item reveal d1" data-cat="office" data-label="Study Built-In Wall">
+        <div class="g-fill" style="background:linear-gradient(135deg,#8b6535,#5a3d18)">Drop office photo here</div>
+        <div class="g-overlay"><span class="g-label">Study Built-In Wall</span></div>
+      </div>
+
+    </div>
+
+    <!-- Note -->
+    <p style="margin-top:2.5rem;font-family:var(--ff-cond);font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);text-align:center">
+      Photos coming soon — drop images into <code style="font-family:monospace;background:var(--cream);padding:0.1rem 0.4rem">images/gallery/</code> and replace the placeholder divs
+    </p>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-nav lb-prev" aria-label="Previous">&#8249;</button>
+  <div class="lb-inner">
+    <button class="lb-close" aria-label="Close">✕</button>
+    <img class="lb-img" src="" alt="" style="display:none">
+    <div class="lb-placeholder">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><rect x="4" y="8" width="40" height="32" rx="2"/><circle cx="16" cy="18" r="4"/><path d="M4 32l12-8 8 6 8-10 12 12"/></svg>
+      Photo Coming Soon
+    </div>
+    <p class="lb-caption"></p>
+  </div>
+  <button class="lb-nav lb-next" aria-label="Next">&#8250;</button>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="wrap">
+    <h2 class="h2">Like what you <em>see?</em></h2>
+    <p>Let's talk about your project. Free consultation, no obligation.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn btn-ghost">Get a Quote</a>
+      <a href="services.html" class="btn" style="background:rgba(0,0,0,0.12);color:var(--black)">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-body">
+    <div class="footer-brand">
+      <svg viewBox="0 0 230 72" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="94" height="72" fill="#0a0a0a"/>
+        <polygon points="47,7 87,36 47,65 7,36" fill="none" stroke="white" stroke-width="2.2"/>
+        <text x="37" y="46" font-family="Georgia,serif" font-size="24" fill="white" font-weight="bold" font-style="italic">R</text>
+        <text x="46" y="47" font-family="Georgia,serif" font-size="21" fill="white" font-weight="bold" font-style="italic" opacity="0.85">C</text>
+        <rect x="94" y="0" width="2" height="72" fill="white"/>
+        <rect x="96" y="0" width="134" height="72" fill="white"/>
+        <g transform="translate(108,12)" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <path d="M2,33 L2,40 L99,40 L110,33 L110,26 L97,19 L69,19 L64,12 L45,12 L40,19 L2,19 Z" stroke-width="1.6"/>
+          <path d="M79,19 C79,19 91,15 95,24 C99,33 91,40 79,40" stroke-width="1.4"/>
+          <ellipse cx="15" cy="29" rx="9" ry="10" stroke-width="1.4"/>
+          <rect x="44" y="13" width="18" height="7" rx="1" stroke-width="1.3"/>
+          <circle cx="56" cy="29" r="4" stroke-width="1.2"/>
+        </g>
+        <rect x="1" y="1" width="228" height="70" fill="none" stroke="white" stroke-width="2.5"/>
+      </svg>
+      <p>Fine custom cabinetry crafted for homes and businesses across the region.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Kitchen Cabinetry</a></li>
+        <li><a href="services.html">Bathroom Vanities</a></li>
+        <li><a href="services.html">Built-In Storage</a></li>
+        <li><a href="services.html">Custom Furniture</a></li>
+        <li><a href="services.html">Home Office</a></li>
+        <li><a href="services.html">Finishing &amp; Refinishing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <address>(555) 000-0000<br>info@rhinehartcabinetry.com<br><br>Free Estimates Available</address>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>© 2025 Rhinehart Cabinetry · All Rights Reserved</span>
+    <a href="contact.html">Get a Free Quote →</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
