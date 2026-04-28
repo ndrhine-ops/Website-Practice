@@ -137,7 +137,7 @@ input, textarea, select { font-family: inherit; }
   box-shadow: 0 2px 30px rgba(0,0,0,0.55);
 }
 
-.nav-brand svg { height: 46px; width: auto; display: block; }
+.nav-brand .logo-img { height: 46px; width: auto; display: block; filter: brightness(0) invert(1); }
 
 .nav-list {
   display: flex;
@@ -271,7 +271,7 @@ input, textarea, select { font-family: inherit; }
   max-width: var(--max-w);
   margin: 0 auto;
 }
-.footer-brand svg  { height: 38px; margin-bottom: 1.25rem; }
+.footer-brand .logo-img { height: 38px; width: auto; display: block; margin-bottom: 1.25rem; filter: brightness(0) invert(1); }
 .footer-brand p {
   font-size: 0.9rem;
   font-weight: 300;
