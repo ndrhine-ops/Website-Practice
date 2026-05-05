@@ -55,8 +55,6 @@
     @media (max-width:680px) {
       .svc-detail-grid { grid-template-columns: 1fr; }
     }
-    .process-layout { display:grid; grid-template-columns:1fr 1fr; gap:clamp(3rem,6vw,6rem); align-items:start; }
-    @media (max-width:1000px) { .process-layout { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
@@ -183,38 +181,16 @@
   </div>
 </section>
 
-<!-- Process -->
+<!-- Contact CTA -->
 <section style="background:var(--charcoal);padding:clamp(5rem,10vw,8rem) 0">
-  <div class="wrap">
-    <div class="process-layout">
-      <div>
-        <div class="label reveal" style="margin-bottom:1.25rem">Our Process</div>
-        <h2 class="h2 light reveal d1">From idea<br>to <em>installation</em></h2>
-        <p class="body-t light reveal d2" style="margin-top:1rem">Every great project starts with a conversation. We guide you from concept to completion — no guesswork, no surprises.</p>
-        <a href="contact.html" class="btn btn-gold reveal d3" style="margin-top:2rem">
-          Start With a Call
-          <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7.5h11M8.5 3l4.5 4.5L8.5 12"/></svg>
-        </a>
-      </div>
-      <div class="process-steps">
-        <div class="process-step reveal"><span class="step-n">01</span><div><p class="step-title">Free Consultation</p><p class="step-body">We visit your space, listen to your goals, and walk through possibilities. No commitment required.</p></div></div>
-        <div class="process-step reveal d1"><span class="step-n">02</span><div><p class="step-title">Design &amp; Proposal</p><p class="step-body">Detailed drawings and a transparent, line-item proposal for your review before any work begins.</p></div></div>
-        <div class="process-step reveal d2"><span class="step-n">03</span><div><p class="step-title">Build</p><p class="step-body">Every piece built by hand in our shop using materials selected specifically for your project.</p></div></div>
-        <div class="process-step reveal d3"><span class="step-n">04</span><div><p class="step-title">Install &amp; Finish</p><p class="step-body">Precise installation, clean site, final walkthrough. We don't sign off until you're completely satisfied.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="wrap">
-    <h2 class="h2">Ready to get <em>started?</em></h2>
-    <p>Contact us for a free consultation. We'll bring the tape measure.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <a href="contact.html" class="btn btn-ghost">Contact Us</a>
-      <a href="gallery.html" class="btn" style="background:rgba(0,0,0,0.12);color:var(--black)">See Our Work</a>
-    </div>
+  <div class="wrap" style="max-width:700px;text-align:center">
+    <div class="label reveal" style="justify-content:center;margin-bottom:1.25rem">Get In Touch</div>
+    <h2 class="h2 light reveal d1">Have a project<br>in <em>mind?</em></h2>
+    <p class="body-t light reveal d2" style="margin-top:1rem">Tell us about your space and what you need — we'll handle the rest. Free consultation, no obligation.</p>
+    <a href="contact.html" class="btn btn-gold reveal d3" style="margin-top:2.5rem;display:inline-flex">
+      Contact Us
+      <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7.5h11M8.5 3l4.5 4.5L8.5 12"/></svg>
+    </a>
   </div>
 </section>
 
